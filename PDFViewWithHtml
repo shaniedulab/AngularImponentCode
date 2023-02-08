@@ -1,0 +1,13 @@
+import { Pipe } from '@angular/core';
+import { DomSanitizer,  SafeUrl, SafeResourceUrl } from '@angular/platform-browser';
+
+private sanitizer:DomSanitizer
+
+photoURL() {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(this.getfileimage);
+  }
+
+<img src="{{getfileimage}}" height="100%" width="100%" /> 
+<iframe [src]="photoURL()" width="100%" height="550" ></iframe> 
+<embed type="image/jpg" src="{{fileUrl}}/{{userid}}/{{getfileimage}}" height="100%" width="100%" />
+<object [data]="photoURL()" width="100%" height="530"></object> 
