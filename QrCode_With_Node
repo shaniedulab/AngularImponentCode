@@ -10,3 +10,6 @@ const generateQr=async (text)=>{
 }
 
 generateQr('Shani')
+
+//toDateUrl
+//toString
