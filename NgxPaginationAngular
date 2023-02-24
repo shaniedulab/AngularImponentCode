@@ -1,0 +1,18 @@
+<div class="list">
+	<ul>
+		<li *ngFor="let item of collection | paginate: { itemsPerPage: 10, currentPage:a}">{{ item }}</li>
+	</ul>
+
+	<pagination-controls (pageChange)='getNo($event)'></pagination-controls>
+</div>
+
+
+
+getNo(e){
+  console.log(e)
+  this.a=e
+}
+  
+for (let i = 1; i <= 100; i++) {
+   this.collection.push(`item ${i}`);
+}
