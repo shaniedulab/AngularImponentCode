@@ -1,0 +1,12 @@
+gmailDomainValidator(control: FormControl) {
+    const email = control.value;
+    if (email && email.indexOf('@') !== -1) {
+      const [_, domain] = email.split('@');
+      if (domain.toLowerCase() === 'gmail.com') {
+        return { gmailDomain: true };
+      }
+    }
+    return null;
+  }
+  
+  email: ['', [Validators.required, Validators.email,this.gmailDomainValidator]], //!email.errors.email?.gmailDomain
